@@ -15,11 +15,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav
-      style={{ boxShadow: "0px 0px 25px 0px #2C4A52" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#06141B] border-b border-[#1e2a1e]"
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#06141B] border-b border-[#1e2a1e] shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5">
           <span className="text-[#4ADE80] text-xl font-bold">⚡</span>
           <span className="text-white font-bold text-lg tracking-tight">
@@ -27,16 +25,16 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Burger button (mobile) */}
+        {/* Burger button (mobile < sm) */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-xl"
+          className="sm:hidden text-white text-2xl"
         >
           {open ? "✕" : "☰"}
         </button>
 
-        {/* Desktop menu */}
-        <ul className="hidden md:flex items-center gap-6">
+        {/* Desktop menu (≥ sm / 640px) */}
+        <ul className="hidden sm:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.label}>
               <span className="text-gray-400 text-sm cursor-not-allowed opacity-60 select-none">
@@ -47,7 +45,7 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop buttons */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3">
           <span className="text-gray-400 text-sm cursor-not-allowed opacity-60 select-none">
             Login
           </span>
@@ -59,7 +57,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 space-y-3 bg-[#06141B] border-t border-[#1e2a1e]">
+        <div className="sm:hidden px-4 pb-4 space-y-3 bg-[#06141B] border-t border-[#1e2a1e]">
           <ul className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <li key={link.label}>
