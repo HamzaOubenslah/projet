@@ -1,3 +1,4 @@
+//link
 const footerLinks = {
   Home: ["About us", "Technologie"],
   Industry: ["Industrial","Agriculture", "Building", "Security", "Energy"],
