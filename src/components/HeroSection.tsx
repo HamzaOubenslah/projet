@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import SolarModel from "@/components/3D/SolarModel";
 import { useState } from "react";
 
 export default function HeroSection() {
@@ -115,13 +115,7 @@ export default function HeroSection() {
      <div className="w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-4 min-h-[500px]" style={{ boxShadow: "0px 0px 25px 0px #2C4A52" }}>       
         <div className="flex-1 flex justify-center">
           <div className="relative w-72 h-64 md:w-96 md:h-80">
-            <Image
-              src="/images/img.png"
-              alt="3D Solar House"
-              fill
-              className="object-contain"
-              priority
-            />
+            <SolarModel />
           </div>
         </div>
 
